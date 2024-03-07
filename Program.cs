@@ -1,8 +1,23 @@
 ﻿using NLog;
+//dotnet add package NLog --version 5.2.8
 
-    string path = Directory.GetCurrentDirectory() + "\\nlog.config";
+    string path = Directory.GetCurrentDirectory() + "//nlog.config";
     var logger = LogManager.LoadConfiguration(path).GetCurrentClassLogger();
 
+    static void UserMenu()
+    {
+        Console.WriteLine("\nMenu:");
+        Console.WriteLine("1. View all movies");
+        Console.WriteLine("2. Add a new movie");
+        Console.WriteLine("3. Exit");
+    }
+
+    static int UserChoice()
+    {
+        Console.Write("Please enter your choice: ");
+        return int.Parse(Console.ReadLine());
+    }
+    
         try
         {
             logger.Info("Welcome to the Movie Library!");
@@ -12,8 +27,8 @@
 
             while (true)
             {
-                DisplayMenu();
-                var choice = GetUserChoice();
+                UserMenu();
+                var choice = UserChoice();
 
                 switch (choice)
                 {
@@ -37,29 +52,27 @@
             logger.Error(ex, "An error occurred: {0}", ex.Message);
             Console.WriteLine("An error occurred. Please check the log for details.");
         }
+    
 
-    static Movie[] LoadMoviesFromCSV(string fileName)
+    static (int Id, string Title, string[] Genres)[] LoadMoviesFromCSV(string fileName)
     {
         var lines = File.ReadAllLines(fileName);
-        var movies = new Movie[lines.Length - 1]; 
+        var movies = new (int Id, string Title, string[] Genres)[lines.Length - 1];
 
         for (int i = 1; i < lines.Length; i++)
         {
             var line = lines[i];
             var parts = line.Split(',');
 
-            var movie = new Movie();
-            movie.Id = int.Parse(parts[0]);
-            movie.Title = parts[1];
-            movie.Genres = parts[2].Split('|');
+            var genres = parts[2].Split('|');
 
-            movies[i - 1] = movie;
+            movies[i - 1] = (int.Parse(parts[0]), parts[1], genres);
         }
 
         return movies;
     }
 
-    static void ViewAllMovies(Logger logger, Movie[] movies)
+    static void ViewAllMovies(Logger logger, (int Id, string Title, string[] Genres)[] movies)
     {
         logger.Info("\nAll Movies:");
         foreach (var movie in movies)
@@ -68,10 +81,10 @@
         }
     }
 
-    static Movie[] AddNewMovie(Logger logger, Movie[] movies)
+    static (int Id, string Title, string[] Genres)[] AddNewMovie(Logger logger, (int Id, string Title, string[] Genres)[] movies)
     {
         Console.Write("Enter movie title: ");
-        string title = Console.ReadLine();
+        string? title = Console.ReadLine();
 
         Console.Write("Enter movie genres (separated by '|'): ");
         string[] genres = Console.ReadLine().Split('|');
@@ -80,15 +93,7 @@
             genres[i] = genres[i].Trim();
         }
 
-        bool titleExists = false;
-        foreach (var movie in movies)
-        {
-            if (movie.Title.Equals(title, StringComparison.OrdinalIgnoreCase))
-            {
-                titleExists = true;
-                break;
-            }
-        }
+        bool titleExists = movies.Any(movie => movie.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
 
         if (titleExists)
         {
@@ -96,18 +101,10 @@
             return movies;
         }
 
-        int newId = 0;
-        foreach (var movie in movies)
-        {
-            if (movie.Id > newId)
-            {
-                newId = movie.Id;
-            }
-        }
-        newId++;
+        int newId = movies.Max(movie => movie.Id) + 1;
 
-        var newMovie = new Movie { Id = newId, Title = title, Genres = genres };
-        var newMovieList = new Movie[movies.Length + 1];
+        var newMovie = (newId, title, genres);
+        var newMovieList = new (int Id, string Title, string[] Genres)[movies.Length + 1];
         Array.Copy(movies, newMovieList, movies.Length);
         newMovieList[movies.Length] = newMovie;
 
@@ -126,23 +123,4 @@
         return newMovieList;
     }
 
-    static void DisplayMenu()
-    {
-        Console.WriteLine("\nMenu:");
-        Console.WriteLine("1. View all movies");
-        Console.WriteLine("2. Add a new movie");
-        Console.WriteLine("3. Exit");
-    }
 
-    static int GetUserChoice()
-    {
-        Console.Write("Please enter your choice: ");
-        return int.Parse(Console.ReadLine());
-    }
-
-class Movie
-{
-    public int Id { get; set; }
-    public string Title { get; set; }
-    public string[] Genres { get; set; }
-}

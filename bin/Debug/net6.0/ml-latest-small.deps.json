@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ml-latest-small/1.0.0": {
         "dependencies": {
+          "NLog": "5.2.8",
           "NLog.Web.AspNetCore": "5.3.8"
         },
         "runtime": {

@@ -164,3 +164,13 @@ All Movies:
 2024-03-07 02:02:10.6257|WARN|Program|Movie '' already exists.
 2024-03-07 02:02:11.0360|INFO|Program|
 All Movies:
+2024-03-07 09:17:05.5560|INFO|Program|Welcome to the Movie Library!
+2024-03-07 09:17:05.5914|INFO|Program|Number of movies loaded: 9125
+2024-03-07 09:17:10.3891|INFO|Program|
+All Movies:
+2024-03-07 09:17:21.2247|INFO|Program|Exiting...
+2024-03-07 09:23:30.3387|INFO|Program|Welcome to the Movie Library!
+2024-03-07 09:23:30.3731|INFO|Program|Number of movies loaded: 9125
+2024-03-07 09:23:33.0603|INFO|Program|
+All Movies:
+2024-03-07 09:23:37.8165|INFO|Program|Movie 'dss' added successfully!

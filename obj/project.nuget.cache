@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "erZXVNDNHyX349KDAJ4ofFaTi6BeEViUgOdQtMEZ0ZkpFoBcsN5rPyU0JuWwwbvBRIqXIcfV4UcJJ16VQnbYrw==",
+  "dgSpecHash": "7+P2UCWC+n6Z3wHig6C6J9E9wwr8IuG5jWSnmwtaJWJ+Gy2hb4VUb5ML40UxEGsK60quVB2B4Kx6ewt3H/mhDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\spade\\OneDrive\\Desktop\\ml-latest-small\\ml-latest-small.csproj",
+  "projectFilePath": "/Users/gavinschroeder/MLAssignment/ml-latest-small.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\spade\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\nlog\\5.2.8\\nlog.5.2.8.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\nlog.extensions.logging\\5.3.8\\nlog.extensions.logging.5.3.8.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\nlog.web.aspnetcore\\5.3.8\\nlog.web.aspnetcore.5.3.8.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\spade\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "/Users/gavinschroeder/.nuget/packages/microsoft.extensions.configuration.abstractions/6.0.0/microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.0/microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/nlog/5.2.8/nlog.5.2.8.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/nlog.extensions.logging/5.3.8/nlog.extensions.logging.5.3.8.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/nlog.web.aspnetcore/5.3.8/nlog.web.aspnetcore.5.3.8.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "/Users/gavinschroeder/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
