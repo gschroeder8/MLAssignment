@@ -1,0 +1,166 @@
+2024-03-07 00:52:20.9388|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 00:52:20.9642|ERROR|MovieLibrary.Program|An error occurred: Input string was not in a correct format.|System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at MovieLibrary.Program.<>c.<LoadMoviesFromCSV>b__1_1(String[] parts) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 61
+   at System.Linq.Utilities.<>c__DisplayClass2_0`3.<CombineSelectors>b__0(TSource x)
+   at System.Linq.Enumerable.SelectListPartitionIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at MovieLibrary.Program.LoadMoviesFromCSV(String fileName) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 58
+   at MovieLibrary.Program.Main(String[] args) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 19
+2024-03-07 00:54:19.4410|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 00:54:19.4612|ERROR|MovieLibrary.Program|An error occurred: Input string was not in a correct format.|System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at MovieLibrary.Program.<>c.<LoadMoviesFromCSV>b__1_1(String[] parts) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 61
+   at System.Linq.Utilities.<>c__DisplayClass2_0`3.<CombineSelectors>b__0(TSource x)
+   at System.Linq.Enumerable.SelectListPartitionIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at MovieLibrary.Program.LoadMoviesFromCSV(String fileName) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 58
+   at MovieLibrary.Program.Main(String[] args) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 19
+2024-03-07 01:05:06.9019|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:05:06.9226|ERROR|Program|An error occurred: Input string was not in a correct format.|System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at Program.<>c.<<Main>$>b__0_4(String[] parts) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 56
+   at System.Linq.Utilities.<>c__DisplayClass2_0`3.<CombineSelectors>b__0(TSource x)
+   at System.Linq.Enumerable.SelectListPartitionIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Program.<<Main>$>g__LoadMoviesFromCSV|0_0(String fileName) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 53
+   at Program.<Main>$(String[] args) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 14
+2024-03-07 01:06:40.1104|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:06:40.1306|ERROR|Program|An error occurred: Input string was not in a correct format.|System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at Program.<>c.<<Main>$>b__0_4(String[] parts) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 57
+   at System.Linq.Utilities.<>c__DisplayClass2_0`3.<CombineSelectors>b__0(TSource x)
+   at System.Linq.Enumerable.SelectListPartitionIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Program.<<Main>$>g__LoadMoviesFromCSV|0_0(String fileName) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 54
+   at Program.<Main>$(String[] args) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 15
+2024-03-07 01:07:19.3728|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:09:50.9216|INFO|Program|Exiting...
+2024-03-07 01:10:51.6025|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:11:36.8251|INFO|Program|Exiting...
+2024-03-07 01:11:41.9951|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:12:33.3766|INFO|Program|Exiting...
+2024-03-07 01:12:37.3087|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:13:17.4910|INFO|Program|
+All Movies:
+2024-03-07 01:13:35.2764|INFO|Program|Movie 'the' added successfully!
+2024-03-07 01:14:18.4849|INFO|Program|Exiting...
+2024-03-07 01:17:21.9088|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:19:38.9913|INFO|Program|Exiting...
+2024-03-07 01:19:42.6568|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:19:43.5117|INFO|Program|
+All Movies:
+2024-03-07 01:19:47.5592|INFO|Program|
+All Movies:
+2024-03-07 01:20:04.5544|INFO|Program|Movie 'the' added successfully!
+2024-03-07 01:22:21.3109|INFO|Program|Exiting...
+2024-03-07 01:22:25.0502|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:22:26.2616|INFO|Program|
+All Movies:
+2024-03-07 01:24:09.9843|INFO|Program|
+All Movies:
+2024-03-07 01:24:11.5501|INFO|Program|
+All Movies:
+2024-03-07 01:24:12.0970|INFO|Program|
+All Movies:
+2024-03-07 01:24:12.5571|INFO|Program|
+All Movies:
+2024-03-07 01:24:13.0209|INFO|Program|
+All Movies:
+2024-03-07 01:24:14.0351|INFO|Program|Exiting...
+2024-03-07 01:24:18.3413|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:24:19.0095|INFO|Program|
+All Movies:
+2024-03-07 01:24:20.7434|INFO|Program|
+All Movies:
+2024-03-07 01:27:10.1197|INFO|Program|Exiting...
+2024-03-07 01:28:37.8531|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 01:28:37.8658|INFO|MovieLibrary.Program|Loading movies from CSV file: movies.csv
+2024-03-07 01:28:37.8772|INFO|MovieLibrary.Program|Movies loaded successfully.
+2024-03-07 01:28:37.8772|INFO|MovieLibrary.Program|Number of movies loaded: 0
+2024-03-07 01:28:44.4603|INFO|MovieLibrary.Program|
+All Movies:
+2024-03-07 01:32:38.8875|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 01:32:38.9011|INFO|MovieLibrary.Program|Loading movies from CSV file: movies.csv
+2024-03-07 01:32:38.9129|INFO|MovieLibrary.Program|Movies loaded successfully.
+2024-03-07 01:32:38.9129|INFO|MovieLibrary.Program|Number of movies loaded: 0
+2024-03-07 01:32:43.0483|INFO|MovieLibrary.Program|
+All Movies:
+2024-03-07 01:34:24.5314|INFO|MovieLibrary.Program|Exiting...
+2024-03-07 01:34:27.6266|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 01:34:27.6396|INFO|MovieLibrary.Program|Loading movies from CSV file: movies.csv
+2024-03-07 01:34:27.6396|INFO|MovieLibrary.Program|Movies loaded successfully.
+2024-03-07 01:34:27.6396|INFO|MovieLibrary.Program|Number of movies loaded: 0
+2024-03-07 01:34:29.3727|INFO|MovieLibrary.Program|
+All Movies:
+2024-03-07 01:35:53.3315|INFO|MovieLibrary.Program|Exiting...
+2024-03-07 01:37:09.2910|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 01:37:09.3039|INFO|MovieLibrary.Program|Loading movies from CSV file: movies.csv
+2024-03-07 01:37:09.3156|INFO|MovieLibrary.Program|Movies loaded successfully.
+2024-03-07 01:37:09.3156|INFO|MovieLibrary.Program|Number of movies loaded: 0
+2024-03-07 01:38:16.2991|ERROR|MovieLibrary.Program|An error occurred: Input string was not in a correct format.|System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at MovieLibrary.Program.Main(String[] args) in C:\Users\spade\OneDrive\Desktop\ml-latest-small\Program.cs:line 33
+2024-03-07 01:38:23.3119|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 01:38:23.3119|INFO|MovieLibrary.Program|Loading movies from CSV file: movies.csv
+2024-03-07 01:38:23.3397|INFO|MovieLibrary.Program|Movies loaded successfully.
+2024-03-07 01:38:23.3397|INFO|MovieLibrary.Program|Number of movies loaded: 9125
+2024-03-07 01:38:25.1276|INFO|MovieLibrary.Program|
+All Movies:
+2024-03-07 01:38:46.6054|INFO|MovieLibrary.Program|Movie 'yippe' added successfully!
+2024-03-07 01:39:34.3290|INFO|MovieLibrary.Program|Exiting...
+2024-03-07 01:39:38.4945|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:39:38.5075|INFO|Program|Loading movies from CSV file: movies.csv
+2024-03-07 01:39:38.5213|INFO|Program|Movies loaded successfully.
+2024-03-07 01:39:38.5213|INFO|Program|Number of movies loaded: 9126
+2024-03-07 01:39:40.5218|INFO|Program|
+All Movies:
+2024-03-07 01:39:46.5344|INFO|Program|Movie 'yyyyy' added successfully!
+2024-03-07 01:42:21.9476|INFO|Program|Exiting...
+2024-03-07 01:42:25.0091|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 01:42:25.0227|INFO|MovieLibrary.Program|Loading movies from CSV file: movies.csv
+2024-03-07 01:42:25.0367|INFO|MovieLibrary.Program|Movies loaded successfully.
+2024-03-07 01:42:25.0367|INFO|MovieLibrary.Program|Number of movies loaded: 9127
+2024-03-07 01:43:05.9071|INFO|MovieLibrary.Program|Exiting...
+2024-03-07 01:43:09.6144|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 01:43:09.6278|INFO|MovieLibrary.Program|Loading movies from CSV file: movies.csv
+2024-03-07 01:43:09.6420|INFO|MovieLibrary.Program|Movies loaded successfully.
+2024-03-07 01:43:09.6420|INFO|MovieLibrary.Program|Number of movies loaded: 9127
+2024-03-07 01:43:15.5886|INFO|MovieLibrary.Program|Movie 'djdjdj' added successfully!
+2024-03-07 01:43:35.1969|INFO|MovieLibrary.Program|Movie 'wdapodkdwap' added successfully!
+2024-03-07 01:47:22.5097|INFO|MovieLibrary.Program|Exiting...
+2024-03-07 01:49:44.7819|INFO|MovieLibrary.Program|Welcome to the Movie Library!
+2024-03-07 01:49:44.8041|INFO|MovieLibrary.Program|Number of movies loaded: 9126
+2024-03-07 01:52:02.3789|INFO|MovieLibrary.Program|Exiting...
+2024-03-07 01:52:05.3480|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:52:05.3706|INFO|Program|Number of movies loaded: 9126
+2024-03-07 01:52:06.3681|INFO|Program|
+All Movies:
+2024-03-07 01:52:17.7553|INFO|Program|Movie 'yaaaa' added successfully!
+2024-03-07 01:57:27.1612|INFO|Program|Exiting...
+2024-03-07 01:57:29.8794|INFO|Program|Welcome to the Movie Library!
+2024-03-07 01:57:29.9013|INFO|Program|Number of movies loaded: 9127
+2024-03-07 01:57:32.2787|INFO|Program|
+All Movies:
+2024-03-07 01:57:41.4089|INFO|Program|Movie 'iiiii' added successfully!
+2024-03-07 02:00:26.5798|INFO|Program|Exiting...
+2024-03-07 02:00:30.3365|INFO|Program|Welcome to the Movie Library!
+2024-03-07 02:00:30.3598|INFO|Program|Number of movies loaded: 9128
+2024-03-07 02:00:32.6070|INFO|Program|
+All Movies:
+2024-03-07 02:00:37.9716|INFO|Program|Movie 'aoiwdjoaiwdj' added successfully!
+2024-03-07 02:01:51.3180|INFO|Program|Movie '22' added successfully!
+2024-03-07 02:01:56.0015|INFO|Program|
+All Movies:
+2024-03-07 02:02:03.7825|INFO|Program|Movie '====' added successfully!
+2024-03-07 02:02:05.2560|INFO|Program|
+All Movies:
+2024-03-07 02:02:08.6436|INFO|Program|Movie '' added successfully!
+2024-03-07 02:02:10.6257|WARN|Program|Movie '' already exists.
+2024-03-07 02:02:11.0360|INFO|Program|
+All Movies:
