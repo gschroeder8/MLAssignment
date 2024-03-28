@@ -47,6 +47,8 @@ public class MovieFile
 
     public void AddMovie(Movie movie)
     {
+        try
+        {
             movie.MediaId = Movies.Max(m => m.MediaId) + 1;
             string formattedTitle = movie.Title.IndexOf(',') != -1 || movie.Title.IndexOf('"') != -1 ? $"\"{movie.Title}\"" : movie.Title;
             StreamWriter sw = new StreamWriter(FilePath, true);
@@ -54,5 +56,10 @@ public class MovieFile
             sw.Close();
             Movies.Add(movie);
             logger.Info("Media id {Id} added", movie.MediaId);
-        }    
+        }
+        catch (Exception ex)
+        {
+            logger.Error(ex.Message);
+        }
     }
+}
