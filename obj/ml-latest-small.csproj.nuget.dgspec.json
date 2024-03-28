@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/gavinschroeder/MLAssignment/ml-latest-small.csproj": {}
+    "C:\\Users\\spade\\OneDrive\\Desktop\\UpdatedMovieLibraryLab\\MLAssignment\\ml-latest-small.csproj": {}
   },
   "projects": {
-    "/Users/gavinschroeder/MLAssignment/ml-latest-small.csproj": {
+    "C:\\Users\\spade\\OneDrive\\Desktop\\UpdatedMovieLibraryLab\\MLAssignment\\ml-latest-small.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gavinschroeder/MLAssignment/ml-latest-small.csproj",
+        "projectUniqueName": "C:\\Users\\spade\\OneDrive\\Desktop\\UpdatedMovieLibraryLab\\MLAssignment\\ml-latest-small.csproj",
         "projectName": "ml-latest-small",
-        "projectPath": "/Users/gavinschroeder/MLAssignment/ml-latest-small.csproj",
-        "packagesPath": "/Users/gavinschroeder/.nuget/packages/",
-        "outputPath": "/Users/gavinschroeder/MLAssignment/obj/",
+        "projectPath": "C:\\Users\\spade\\OneDrive\\Desktop\\UpdatedMovieLibraryLab\\MLAssignment\\ml-latest-small.csproj",
+        "packagesPath": "C:\\Users\\spade\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\spade\\OneDrive\\Desktop\\UpdatedMovieLibraryLab\\MLAssignment\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/gavinschroeder/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\spade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.308/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
