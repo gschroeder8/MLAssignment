@@ -1,23 +1,11 @@
 ﻿using NLog;
-//dotnet add package NLog --version 5.2.8
 
-    string path = Directory.GetCurrentDirectory() + "//nlog.config";
-    var logger = LogManager.LoadConfiguration(path).GetCurrentClassLogger();
+class Program
+{
+    private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
-    static void UserMenu()
+    static void Main(string[] args)
     {
-        Console.WriteLine("\nMenu:");
-        Console.WriteLine("1. View all movies");
-        Console.WriteLine("2. Add a new movie");
-        Console.WriteLine("3. Exit");
-    }
-
-    static int UserChoice()
-    {
-        Console.Write("Please enter your choice: ");
-        return int.Parse(Console.ReadLine());
-    }
-    
         try
         {
             logger.Info("Welcome to the Movie Library!");
@@ -33,10 +21,10 @@
                 switch (choice)
                 {
                     case 1:
-                        ViewAllMovies(logger, movies);
+                        ViewAllMovies(movies);
                         break;
                     case 2:
-                        movies = AddNewMovie(logger, movies);
+                        movies = AddNewMovie(movies);
                         break;
                     case 3:
                         logger.Info("Exiting...");
@@ -52,50 +40,64 @@
             logger.Error(ex, "An error occurred: {0}", ex.Message);
             Console.WriteLine("An error occurred. Please check the log for details.");
         }
-    
-
-    static (int Id, string Title, string[] Genres)[] LoadMoviesFromCSV(string fileName)
-    {
-        var lines = File.ReadAllLines(fileName);
-        var movies = new (int Id, string Title, string[] Genres)[lines.Length - 1];
-
-        for (int i = 1; i < lines.Length; i++)
-        {
-            var line = lines[i];
-            var parts = line.Split(',');
-
-            var genres = parts[2].Split('|');
-
-            movies[i - 1] = (int.Parse(parts[0]), parts[1], genres);
-        }
-
-        return movies;
     }
 
-    static void ViewAllMovies(Logger logger, (int Id, string Title, string[] Genres)[] movies)
+    static void UserMenu()
+    {
+        Console.WriteLine("\nMenu:");
+        Console.WriteLine("1. View all movies");
+        Console.WriteLine("2. Add a new movie");
+        Console.WriteLine("3. Exit");
+    }
+
+    static int UserChoice()
+    {
+        Console.Write("Please enter your choice: ");
+        return int.Parse(Console.ReadLine());
+    }
+
+    static (int Id, string Title, string[] Genres, string Director, TimeSpan? Runtime)[] LoadMoviesFromCSV(string fileName)
+    {
+        return File.ReadAllLines(fileName)
+            .Skip(1)
+            .Select(line => line.Split(','))
+            .Select(parts =>
+            {
+                var genres = parts[2].Split('|');
+                var director = parts[3];
+                TimeSpan? runtime = TimeSpan.TryParse(parts[4], out TimeSpan parsedTime) ? parsedTime : (TimeSpan?)null;
+                return (int.Parse(parts[0]), parts[1], genres, director, runtime);
+            })
+            .ToArray();
+    }
+
+    static void ViewAllMovies((int Id, string Title, string[] Genres, string Director, TimeSpan? Runtime)[] movies)
     {
         logger.Info("\nAll Movies:");
         foreach (var movie in movies)
         {
-            Console.WriteLine($"{movie.Id}: {movie.Title} - {string.Join(", ", movie.Genres)}");
+            string runtimeString = movie.Runtime.HasValue ? movie.Runtime.ToString() : "unassigned";
+            Console.WriteLine($"{movie.Id}: {movie.Title} - {string.Join(", ", movie.Genres)} - Director: {movie.Director} - Runtime: {runtimeString}");
         }
     }
 
-    static (int Id, string Title, string[] Genres)[] AddNewMovie(Logger logger, (int Id, string Title, string[] Genres)[] movies)
+    static (int Id, string Title, string[] Genres, string Director, TimeSpan? Runtime)[] AddNewMovie((int Id, string Title, string[] Genres, string Director, TimeSpan? Runtime)[] movies)
     {
         Console.Write("Enter movie title: ");
-        string? title = Console.ReadLine();
+        string title = Console.ReadLine();
 
         Console.Write("Enter movie genres (separated by '|'): ");
-        string[] genres = Console.ReadLine().Split('|');
-        for (int i = 0; i < genres.Length; i++)
-        {
-            genres[i] = genres[i].Trim();
-        }
+        string[] genres = Console.ReadLine().Split('|').Select(genre => genre.Trim()).ToArray();
 
-        bool titleExists = movies.Any(movie => movie.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+        Console.Write("Enter director: ");
+        string director = Console.ReadLine();
 
-        if (titleExists)
+        TimeSpan? runtime = null;
+        Console.Write("Enter runtime (HH:mm:ss or 'unassigned'): ");
+        TimeSpan.TryParse(Console.ReadLine(), out TimeSpan parsedTime);
+        runtime = parsedTime;
+
+        if (movies.Any(movie => movie.Title.Equals(title, StringComparison.OrdinalIgnoreCase)))
         {
             logger.Warn("Movie '{0}' already exists.", title);
             return movies;
@@ -103,24 +105,7 @@
 
         int newId = movies.Max(movie => movie.Id) + 1;
 
-        var newMovie = (newId, title, genres);
-        var newMovieList = new (int Id, string Title, string[] Genres)[movies.Length + 1];
-        Array.Copy(movies, newMovieList, movies.Length);
-        newMovieList[movies.Length] = newMovie;
-
-        try
-        {
-            File.AppendAllText("movies.csv", $"{newId},{title},{string.Join("|", genres)}\n");
-        }
-        catch (Exception ex)
-        {
-            logger.Error(ex, "Failed to write the new movie to the CSV file: {0}", ex.Message);
-            Console.WriteLine("An error occurred while adding the movie. Please check the log for details.");
-        }
-
-        logger.Info("Movie '{0}' added successfully!", title);
-
-        return newMovieList;
+        var newMovie = (newId, title, genres, director, runtime);
+        return movies.Append(newMovie).ToArray();
     }
-
-
+}
