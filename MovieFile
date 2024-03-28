@@ -1,0 +1,58 @@
+using NLog;
+
+public class MovieFile
+{
+    public string FilePath { get; set; }
+    public List<Movie> Movies { get; set; }
+    private static Logger logger;
+
+    public MovieFile(string movieFilePath)
+    {
+        FilePath = movieFilePath;
+        Movies = new List<Movie>();
+        string path = Directory.GetCurrentDirectory() + "//nlog.config";
+        logger = LogManager.LoadConfiguration(path).GetCurrentClassLogger();
+
+        try
+        {
+            StreamReader sr = new StreamReader(FilePath);
+            while (!sr.EndOfStream)
+            {
+                Movie movie = new Movie();
+                string line = sr.ReadLine();
+                string[] movieDetails = line.Split(',');
+                movie.MediaId = UInt64.Parse(movieDetails[0]);
+                movie.Title = movieDetails[1];
+                movie.Genres = movieDetails[2].Split('|').ToList();
+                Movies.Add(movie);
+            }
+            sr.Close();
+            logger.Info("Movies in file {Count}", Movies.Count);
+        }
+        catch (Exception ex)
+        {
+            logger.Error(ex.Message);
+        }
+    }
+
+    public bool IsUniqueTitle(string title)
+    {
+        if (Movies.ConvertAll(m => m.Title.ToLower()).Contains(title.ToLower()))
+        {
+            logger.Info("Duplicate movie title {Title}", title);
+            return false;
+        }
+        return true;
+    }
+
+    public void AddMovie(Movie movie)
+    {
+            movie.MediaId = Movies.Max(m => m.MediaId) + 1;
+            string formattedTitle = movie.Title.IndexOf(',') != -1 || movie.Title.IndexOf('"') != -1 ? $"\"{movie.Title}\"" : movie.Title;
+            StreamWriter sw = new StreamWriter(FilePath, true);
+            sw.WriteLine($"{movie.MediaId},{formattedTitle},{string.Join("|", movie.Genres)},{movie.Director},{movie.RunningTime}");
+            sw.Close();
+            Movies.Add(movie);
+            logger.Info("Media id {Id} added", movie.MediaId);
+        }    
+    }

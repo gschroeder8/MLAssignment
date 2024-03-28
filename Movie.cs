@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 public class Movie
 {
     public ulong MediaId { get; set; }
